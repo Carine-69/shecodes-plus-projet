@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# Function to create a student record
+create_student_record() {
+    # Prompt user for student details
+    read -p "Enter student email: " email
+    read -p "Enter student age: " age
+    read -p "Enter student ID: " student_id
 
     # Save student record to file
     echo "$email, $age, $student_id" >> Students-list_1023.txt
