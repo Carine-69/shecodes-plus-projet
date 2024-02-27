@@ -8,14 +8,14 @@ function updatedWEather(response) {
     let timeElement = document.querySelector("#time");
     let date = new Date(response.data.time * 1000);
    
-    }
-    
+
     cityElement.innerHTML = response.data.city;
     descriptionElement[0].innerHTML = response.data.condition.description;
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     windspeedElement.innerHTML = `${response.data.wind.speed}km/h`;
     timeElement.innerHTML = formatData(date);
     temperatureElement.innerHTML = Math.round(temperature) + "°C";
+}
 
 
 
@@ -30,9 +30,10 @@ function formatData(date){
                 "Friday",
                 "Saturday",
 ];
- if(time ,10) {
-       minutes = `0 ${minutes}`;
- }
+ if(minutes <10) {
+       minutes = `0${minutes}`;
+    }
+
        
        
              let day = days[date.getDay()];
