@@ -7,8 +7,7 @@ function updatedWEather(response) {
     let windspeedElement = document.querySelector("#wind-speed");
     let timeElement = document.querySelector("#time");
     let date = new Date(response.data.time * 1000);
-    if(time ,10) {
-       minutes = `0 ${minutes}`;
+   
     }
     
     cityElement.innerHTML = response.data.city;
@@ -17,7 +16,7 @@ function updatedWEather(response) {
     windspeedElement.innerHTML = `${response.data.wind.speed}km/h`;
     timeElement.innerHTML = formatData(date);
     temperatureElement.innerHTML = Math.round(temperature) + "°C";
-}
+
 
 
 function formatData(date){
@@ -31,8 +30,14 @@ function formatData(date){
                 "Friday",
                 "Saturday",
 ];
-        let day = days[date.getDay()];
+ if(time ,10) {
+       minutes = `0 ${minutes}`;
+ }
+       
+       
+             let day = days[date.getDay()];
   return `${day}  ${hours}:${minutes}`
+  
 }
 function searchCity(city) {
     let apiKey = "78o1309884534590dt047b4a23f7d6b9"; 
